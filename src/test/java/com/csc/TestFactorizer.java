@@ -14,33 +14,60 @@ public class TestFactorizer {
     factorizer = new Factorizer();
   }
 
+  // testing factor()
   @Test
-  public void testNeg1() {
+  public void testNeg1factor() {
     assertEquals(null, factorizer.factor(-1));
   }
   
   @Test
-  public void test0() {
+  public void test0factor() {
     assertEquals(null, factorizer.factor(0));
   }
   
   @Test
-  public void test1() {
+  public void test1factor() {
     assertEquals(null, factorizer.factor(1));
   }
   
   @Test
-  public void test2() {
+  public void test2factor() {
     assertEquals("2", factorizer.factor(2));
   }
   
   @Test
-  public void test4() {
+  public void test4factor() {
     assertEquals("2,2", factorizer.factor(4));
   }
   
   @Test
-  public void test18() {
+  public void test18factor() {
     assertEquals("2,3,3", factorizer.factor(18));
+  }
+  
+  // testing isPrime()
+  @Test
+  public void testNeg1isPrime() {
+    assertEquals(false, factorizer.isPrime(-1));
+  }
+  
+  @Test
+  public void test1isPrime() {
+    assertEquals(false, factorizer.isPrime(1));
+  }
+  
+  @Test
+  public void test2isPrime() {
+    assertEquals(true, factorizer.isPrime(2));
+  }
+  
+  @Test
+  public void test4isPrime() {
+    assertEquals(false, factorizer.isPrime(4));
+  }
+  
+  @Test
+  public void test17isPrime() {
+    assertEquals(true, factorizer.isPrime(17));
   }
 }

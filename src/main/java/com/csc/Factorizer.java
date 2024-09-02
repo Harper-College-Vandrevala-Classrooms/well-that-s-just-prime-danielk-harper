@@ -3,6 +3,13 @@ package com.csc;
 import java.util.*;
 
 public class Factorizer {
+  public boolean isPrime(int number) {
+    String factors = this.factor(number);
+    if (factors == null) return false;
+    
+    return factors.equals(String.format("%d", number));
+  }
+  
   public String factor(int number) {
     if (number <= 1) return null;
     
